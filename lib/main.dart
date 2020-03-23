@@ -1,19 +1,27 @@
+import 'package:blockain/repositories/crypto_repository.dart';
 import 'package:blockain/screens/homescreens.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'blocs/crypto/crypto_bloc.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Crypto coins',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: Colors.black,
-        accentColor: Colors.tealAccent,
+    return BlocProvider<CryptoBloc>(
+      create: (_) => CryptoBloc(cryptoRepository: CryptoRepository(),
+      )..add(AppStarted()),
+          child: MaterialApp(
+        title: 'Crypto coins',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primaryColor: Colors.black,
+          accentColor: Colors.tealAccent,
+        ),
+        home: HomeScreen(),
       ),
-      home: HomeScreen(),
     );
   }
 }
