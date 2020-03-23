@@ -34,6 +34,25 @@ class CryptoBloc extends Bloc<CryptoEvent, CryptoState> {
     }
   }
 
+  Stream<CryptoState> _getCoins({List<Coin> coins, int page = 0}) async* {
+    // request coins
+    try {
+      List<Coin> newCoinsList =
+       coins + await _cryptoRepository.getTopCoins(page: page);
+       yield CryptoLoaded(coins: newCoinsList);
+    } catch(err) {
+      yield CryptoError();
+    }
+  }
 
-  
+  Stream<CryptoState> _mapAppStartedToState() async* {
+    yield CryptoLoaded();
+    yield* _getCoins(coins: []);
+  }
+
+  Stream<CryptoState> _mapLoadMoreCoinsToState(LoadMoreCoins event) async* {
+    final int nextPage= event.coins.length ~/ CryptoRepository.perPage;
+    yield* _getCoins(coins: event.coins, page: nextPage);
+  }
+
 }
