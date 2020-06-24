@@ -3,18 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeScreen extends StatefulWidget {
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final _scrollController = ScrollController();
+    final _scrollController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: AppBar(
-        title: Text('Top Coins by Renee'),
+        title: Text('Top Coins from cryptocompare'),
       ),
       body: BlocBuilder<CryptoBloc, CryptoState>(
         builder: (context, state) {
