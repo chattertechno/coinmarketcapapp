@@ -1,16 +1,25 @@
-# bloc
+# A TOP 20 COINS APP
 
-A new Flutter project.
+Application used flutter bloc for state handling
 
-## Getting Started
+## Problem arised
 
-This project is a starting point for a Flutter application.
+There is a problem caused by blocprovider but i cant solved it so still trying
 
-A few resources to get you started if this is your first Flutter project:
+You can clone the repository ad try to solve it
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+It uses cryptocompare api to bring top 20 most recent coins with highest market cap
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Also I added web support and build it after hosting I will bring here the link to it
+
+You can change the UI because mine is straight forward.
+
+Ands thats the end maybe I'll add something better in the future
+
+And bringing you the full Ecommerce ANDROID/IOS/WEB app in no day
+
+We will use mongodb as our database and strapi as our backend since its easy and fast headless cms
+
+SOOON TO BE BACK..
+
+AND YES THIS IS FREE STUFF USE IT WHATEVA YOU WANT IT
